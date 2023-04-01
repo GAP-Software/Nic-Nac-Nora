@@ -1,17 +1,39 @@
+<!-- This top part is just required stuff. -->
 <!doctype html>
 <html lang="en">
+<!-- This is the header. You put the page title, metadata, and other non-visible things in here.
+        Probably the most important thing for us is the link to the css document. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Page title, shows up on the browser tab. -->
     <title>Nic Nac Nora</title>
+    <!-- This links to our style sheet so our formatting looks great! -->
     <link rel="stylesheet" href="nicnacnora.css">
 </head>
+<!-- This is the body of the document (where the magic happens). -->
 <body>
+    <!-- We're going to put the entire game into a section, so we can better control the look/feel. -->
     <section>
+        <!-- This is a heading we're using as our title. -->
         <h1 class="game--title">Nic Nac Nora</h1>
+        <!-- Then we'll put the game elements in a div. -->
         <div class="game--container">
+            <!-- Each box or "cell" gets it's own declaration with the following properties:
+                    id: Unique identifier so we can reference it in our javascript file.
+                    class: all the same, for styling purposes using the css file.
+                    pieceid: a piece identifier, used to keep track of which piece is in which cell.
+            -->
+            <!-- Each "piece" is also declared within the appropriate "cell" with the following properties.
+                    id: Unique identifier so we can reference it in our javascript file.
+                    cellid: the cell identifier, used to keep track of which cell the piece is in.
+                    class: all the same, for styling purposes.
+                    player: who the piece belongs to "X" or "O".
+                    draggable: always true
+                    Plus the displayed text of "X" or "O".
+            -->
             <div id="0" class="cell" pieceid="X1"><div id="X1" cellid="0" class="piece" player="X" draggable="true">X</div></div>
             <div id="1" class="cell" pieceid="O1"><div id="O1" cellid="1" class="piece" player="O" draggable="true">O</div></div>
             <div id="2" class="cell" pieceid="X2"><div id="X2" cellid="2" class="piece" player="X" draggable="true">X</div></div>
@@ -22,10 +44,12 @@
             <div id="7" class="cell" pieceid="X3"><div id="X3" cellid="7" class="piece" player="X" draggable="true">X</div></div>
             <div id="8" class="cell" pieceid="O3"><div id="O3" cellid="8" class="piece" player="O" draggable="true">O</div></div>
         </div>
+        <!-- This is a heading to track the game status messages (who's turn it is, who won the game, etc). -->
         <h2 class="game--status"></h2>
+        <!-- This is the button to restart the game. -->
         <button class="game--restart">Restart Game</button>
     </section>
-
+    <!-- Here we link to our javascript file.  This is where the game logic lives. -->
     <script src="nnn.js"></script>
 </body>
 </html>
